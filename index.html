@@ -31,9 +31,7 @@
     let time = 0;
     
     function animate() {
-      setTimeout(animate(), 1000);
-      
-      const steps = choreography.length;
+       const steps = choreography.length;
 
       if (choreography[time%steps] === "L") {
         document.getElementById("left-motor-cortex").style.backgroundColor = 'white';
@@ -58,6 +56,6 @@
       time++;
     }
     
-    animate();
+    setInterval(animate, 1000);
   </script>
 </html>
