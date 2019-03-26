@@ -27,5 +27,37 @@
   </div>
   
   <script>
+    const choreography = ["L", "R", "LR", ""];
+    let time = 0;
+    
+    function animate() {
+      setTimeout(animate(), 1000);
+      
+      const steps = choreography.length;
+
+      if (choreography[time%steps] === "L") {
+        document.getElementById("left-motor-cortex").style.backgroundColor = 'white';
+        document.getElementById("right-motor-cortex").style.backgroundColor = 'black';
+      }
+
+      if (choreography[time%steps] === "R") {
+        document.getElementById("left-motor-cortex").style.backgroundColor = 'black';
+        document.getElementById("right-motor-cortex").style.backgroundColor = 'white';
+      }
+
+      if (choreography[time%steps] === "LR") {
+        document.getElementById("left-motor-cortex").style.backgroundColor = 'white';
+        document.getElementById("right-motor-cortex").style.backgroundColor = 'white';
+      }
+
+      if (choreography[time%steps] === "") {
+        document.getElementById("left-motor-cortex").style.backgroundColor = 'black';
+        document.getElementById("right-motor-cortex").style.backgroundColor = 'black';
+      }
+
+      time++;
+    }
+    
+    animate();
   </script>
 </html>
